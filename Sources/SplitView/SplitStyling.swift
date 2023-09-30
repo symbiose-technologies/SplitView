@@ -26,3 +26,21 @@ public class SplitStyling: ObservableObject {
         self.hideSplitter = hideSplitter
     }
 }
+
+
+extension SplitStyling: Equatable, Hashable {
+    static public func == (lhs: SplitStyling, rhs: SplitStyling) -> Bool {
+        lhs.color == rhs.color &&
+            lhs.inset == rhs.inset &&
+            lhs.visibleThickness == rhs.visibleThickness &&
+            lhs.invisibleThickness == rhs.invisibleThickness &&
+            lhs.hideSplitter == rhs.hideSplitter
+    }
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(color)
+        hasher.combine(inset)
+        hasher.combine(visibleThickness)
+        hasher.combine(invisibleThickness)
+        hasher.combine(hideSplitter)
+    }
+}

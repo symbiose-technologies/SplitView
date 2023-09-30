@@ -29,3 +29,6 @@ public struct SplitConstraints {
         self.hideAtMinS = hideAtMinS
     }
 }
+
+
+extension SplitConstraints: Equatable, Hashable { }

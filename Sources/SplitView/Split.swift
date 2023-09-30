@@ -107,7 +107,7 @@ public struct Split<P: View, D: View, S: View>: View {
     }
     
     /// Private init requires all values for Split state to be specified and is used by the modifiers.
-    private init(_ layout: LayoutHolder, fraction: FractionHolder, hide: SideHolder, styling: SplitStyling, constraints: SplitConstraints, onDrag: ((CGFloat)->Void)?, @ViewBuilder primary: @escaping ()->P, @ViewBuilder splitter: @escaping ()->D, @ViewBuilder secondary: @escaping ()->S) {
+    public init(_ layout: LayoutHolder, fraction: FractionHolder, hide: SideHolder, styling: SplitStyling, constraints: SplitConstraints, onDrag: ((CGFloat)->Void)?, @ViewBuilder primary: @escaping ()->P, @ViewBuilder splitter: @escaping ()->D, @ViewBuilder secondary: @escaping ()->S) {
         self.layout = layout
         self.fraction = fraction
         self.hide = hide
